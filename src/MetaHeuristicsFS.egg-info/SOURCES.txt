@@ -1,0 +1,10 @@
+LICENSE
+README.rst
+setup.cfg
+setup.py
+src/MetaHeuristicsFS.py
+src/MetaHeuristicsFS.egg-info/PKG-INFO
+src/MetaHeuristicsFS.egg-info/SOURCES.txt
+src/MetaHeuristicsFS.egg-info/dependency_links.txt
+src/MetaHeuristicsFS.egg-info/requires.txt
+src/MetaHeuristicsFS.egg-info/top_level.txt
