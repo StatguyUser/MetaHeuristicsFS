@@ -1,7 +1,7 @@
 What is it?
 ===========
 
-Companion library of machine learning book `Feature Engineering & Selection for Explainable Models A Second Course for Data Scientists`
+Companion library of machine learning book [Feature Engineering & Selection for Explainable Models A Second Course for Data Scientists](https://statguyuser.github.io/feature-engg-selection-for-explainable-models.github.io/index.html)
 
 MetaHeuristicsFS module helps in identifying combination of features that gives best result. Process of searching best combination is called 'feature selection'. This library uses metaheuristic based algorithms such as genetic algorithm, simulated annealing, ant colony optimization, and particle swarm optimization, for performing feature selection.
 
@@ -20,7 +20,7 @@ Input parameters
         3:{'x_train':x_train_dataframe,'y_train':y_train_array,'x_test':x_test_dataframe,'y_test':y_test_array},
         4:{'x_train':x_train_dataframe,'y_train':y_train_array,'x_test':x_test_dataframe,'y_test':y_test_array}}
         
-        If you only have train and test data and do not wish to do cross validation, use above dictionary format, with only one key.
+    If you only have train and test data and do not wish to do cross validation, use above dictionary format, with only one key.
     
     `x_validation_dataframe` : dataframe containing features of validatoin dataset
     
