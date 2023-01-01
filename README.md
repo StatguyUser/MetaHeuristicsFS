@@ -1,5 +1,5 @@
 # What is it?
-Companion library of machine learning book `Feature Engineering & Selection for Explainable Models A Second Course for Data Scientists`
+Companion library of machine learning book [Feature Engineering & Selection for Explainable Models A Second Course for Data Scientists](https://statguyuser.github.io/feature-engg-selection-for-explainable-models.github.io/index.html)
 
 MetaHeuristicsFS module helps in identifying combination of features that gives best result. Process of searching best combination is called 'feature selection'. This library uses metaheuristic based algorithms such as genetic algorithm, simulated annealing, ant colony optimization, and particle swarm optimization, for performing feature selection.
 
