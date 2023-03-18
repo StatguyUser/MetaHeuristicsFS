@@ -120,8 +120,6 @@ class ParticleSwarmOptimizationFS:
         4:{'x_train':x_train_dataframe,'y_train':y_train_array,'x_test':x_test_dataframe,'y_test':y_test_array}}
         
         If you only have train and test data and do not wish to do cross validation, use above dictionary format, with only one key.
-
-    use_validation_data : Whether you want to use validation data as a boolean True or False. Default value is True. If false, user need not provide x_validation_dataframe and y_validation_dataframe
     
     x_validation_dataframe : dataframe containing features of validatoin dataset
     
@@ -156,11 +154,10 @@ class ParticleSwarmOptimizationFS:
         
     '''
 
-    def __init__(self,columns_list,data_dict,x_validation_dataframe,y_validation_dataframe,model,cost_function,cost_function_improvement='increase',average=None,iterations=100,swarmSize=100,run_time=120,print_iteration_result = True, use_validation_data = True):
+    def __init__(self,columns_list,data_dict,x_validation_dataframe,y_validation_dataframe,model,cost_function,cost_function_improvement='increase',average=None,iterations=100,swarmSize=100,run_time=120,print_iteration_result = True):
         self.columns_list=columns_list
         self.data_dict=data_dict
         self.model=model
-        self.use_validation_data=use_validation_data
         self.x_validation_dataframe=x_validation_dataframe
         self.y_validation_dataframe=y_validation_dataframe
         self.cost_function=cost_function
@@ -1289,6 +1286,8 @@ class FeatureSelection:
         4:{'x_train':x_train_dataframe,'y_train':y_train_array,'x_test':x_test_dataframe,'y_test':y_test_array}}
         
         If you only have train and test data and do not wish to do cross validation, use above dictionary format, with only one key.
+
+    use_validation_data : Whether you want to use validation data as a boolean True or False. Default value is True. If false, user need not provide x_validation_dataframe and y_validation_dataframe
     
     x_validation_dataframe : dataframe containing features of validatoin dataset
     
@@ -1310,9 +1309,10 @@ class FeatureSelection:
 
 
 
-    def __init__(self,columns_list,data_dict,x_validation_dataframe,y_validation_dataframe,model,cost_function,cost_function_improvement='increase',average=None):
+    def __init__(self,columns_list,data_dict,x_validation_dataframe,y_validation_dataframe,model,cost_function,use_validation_data=True,cost_function_improvement='increase',average=None):
         self.columns_list=columns_list
         self.data_dict=data_dict
+        self.use_validation_data=use_validation_data
         self.x_validation_dataframe=x_validation_dataframe
         self.y_validation_dataframe=y_validation_dataframe
         self.model=model

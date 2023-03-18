@@ -6,7 +6,7 @@ MetaHeuristicsFS module helps in identifying combination of features that gives 
 # Input parameters
   - **Machine Learning Parameters: These are common for all algorithms**
     
-    `model` : Model object. It should have .fit and .predict attribute
+    `columns_list` : Column names present in x_train_dataframe and x_test which will be used as input list for searching best list of features.
 
     `data_dict` : X and Y training and test data provided in dictionary format. Below is example of 5 fold cross validation data with keys.
         {0:{'x_train':x_train_dataframe,'y_train':y_train_array,'x_test':x_test_dataframe,'y_test':y_test_array},
@@ -14,19 +14,25 @@ MetaHeuristicsFS module helps in identifying combination of features that gives 
         2:{'x_train':x_train_dataframe,'y_train':y_train_array,'x_test':x_test_dataframe,'y_test':y_test_array},
         3:{'x_train':x_train_dataframe,'y_train':y_train_array,'x_test':x_test_dataframe,'y_test':y_test_array},
         4:{'x_train':x_train_dataframe,'y_train':y_train_array,'x_test':x_test_dataframe,'y_test':y_test_array}}
+        
+    If you only have train and test data and do not wish to do cross validation, use above dictionary format, with only one key.
 
-If you only have train and test data and do not wish to do cross validation, use above dictionary format, with only one key.
+    `use_validation_data` : Whether you want to use validation data as a boolean True or False. Default value is True. If false, user need not provide x_validation_dataframe and y_validation_dataframe
+    
+    `x_validation_dataframe` : dataframe containing features of validatoin dataset
+    
+    `y_validation_dataframe` : dataframe containing dependent variable of validation dataset
+    
+    `model` : Model object. It should have .fit and .predict attribute
+        
+    `cost_function_improvement` : Objective is to whether increase or decrease the cost during subsequent iterations.
+        For regression it should be 'decrease' and for classification it should be 'increase'
 
     `cost_function` : Cost function for finding cost between actual and predicted values, depending on regression or classification problem.
         cost function should accept 'actual' and 'predicted' as arrays and return cost for the both.
     
     `average` : Averaging to be used. This is useful for clasification metrics such as 'f1_score', 'jaccard_score', 'fbeta_score', 'precision_score',
         'recall_score' and 'roc_auc_score' when dependent variable is multi-class
-    
-    `cost_function_improvement` : Objective is to whether increase or decrease the cost during subsequent iterations.
-        For regression it should be 'decrease' and for classification it should be 'increase'
-    
-    `columns_list` : Column names present in x_train_dataframe and x_test which will be used as input list for searching best list of features.
     
   - **Genetic Algorithm Feature Selection (GeneticAlgorithmFS) Parameters**
     
@@ -95,7 +101,7 @@ Md Azimul Haque (2022). Feature Engineering & Selection for Explainable Models A
 # Examples
 
  - [Example 1 - Regression](https://github.com/StatguyUser/feature_engineering_and_selection_for_explanable_models/blob/main/Chapter%208%20-%20Predicting%20Room%20Bookings%20-%20More%20Genetic%20Algorithm%20Iterations.ipynb)
- - [Example 2 - Classification](https://github.com/StatguyUser/feature_engineering_and_selection_for_explanable_models/blob/37ba0d2921fbabbb83df44c6eb7a1242b19a637f/Chapter%208%20-%20Predicting%20Room%20Bookings.ipynb)
+ - [Example 2 - Classification](https://github.com/StatguyUser/feature_engineering_and_selection_for_explanable_models/blob/37ba0d2921fbabbb83df44c6eb7a1242b19a637f/Chapter%208%20-%20Hotel%20Cancelation%20.ipynb)
 
 # Where to get it?
 `pip install MetaHeuristicsFS`

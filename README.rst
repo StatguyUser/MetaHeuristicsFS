@@ -21,6 +21,8 @@ Input parameters
         4:{'x_train':x_train_dataframe,'y_train':y_train_array,'x_test':x_test_dataframe,'y_test':y_test_array}}
         
     If you only have train and test data and do not wish to do cross validation, use above dictionary format, with only one key.
+
+    `use_validation_data` : Whether you want to use validation data as a boolean True or False. Default value is True. If false, user need not provide x_validation_dataframe and y_validation_dataframe
     
     `x_validation_dataframe` : dataframe containing features of validatoin dataset
     
@@ -104,7 +106,7 @@ Examples
 ================
 
  - [Example 1 - Regression](https://github.com/StatguyUser/feature_engineering_and_selection_for_explanable_models/blob/main/Chapter%208%20-%20Predicting%20Room%20Bookings%20-%20More%20Genetic%20Algorithm%20Iterations.ipynb)
- - [Example 2 - Classification](https://github.com/StatguyUser/feature_engineering_and_selection_for_explanable_models/blob/37ba0d2921fbabbb83df44c6eb7a1242b19a637f/Chapter%208%20-%20Predicting%20Room%20Bookings.ipynb)
+ - [Example 2 - Classification](https://github.com/StatguyUser/feature_engineering_and_selection_for_explanable_models/blob/37ba0d2921fbabbb83df44c6eb7a1242b19a637f/Chapter%208%20-%20Hotel%20Cancelation%20.ipynb)
 
 How to cite
 ================
