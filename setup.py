@@ -12,7 +12,7 @@ else:
 
 setup(
     name='MetaHeuristicsFS',
-    version='0.0.2',
+    version='0.0.3',
     description='Implementation of metaheuristic algorithms for machine learning feature selection. Companion library for the book `Feature Engineering & Selection for Explainable Models A Second Course for Data Scientists`',
     long_description=long_description,
     long_description_content_type='text/markdown',  # This is important!
