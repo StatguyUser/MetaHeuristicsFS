@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: MetaHeuristicsFS
-Version: 0.0.4
+Version: 0.0.5
 Summary: Implementation of metaheuristic algorithms for machine learning feature selection. Companion library for the book `Feature Engineering & Selection for Explainable Models A Second Course for Data Scientists`
 Home-page: https://github.com/StatguyUser/MetaHeuristicsFS
 Author: StatguyUser
@@ -36,9 +36,9 @@ Input parameters
 
     `use_validation_data` : Whether you want to use validation data as a boolean True or False. Default value is True. If false, user need not provide x_validation_dataframe and y_validation_dataframe
     
-    `x_validation_dataframe` : dataframe containing features of validatoin dataset
+    `x_validation_dataframe` : dataframe containing features of validatoin dataset. Default is blank pandas dataframe.
     
-    `y_validation_dataframe` : dataframe containing dependent variable of validation dataset
+    `y_validation_dataframe` : dataframe containing dependent variable of validation dataset. Default is blank pandas dataframe.
     
     `model` : Model object. It should have .fit and .predict attribute
         

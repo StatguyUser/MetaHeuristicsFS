@@ -24,9 +24,9 @@ Input parameters
 
     `use_validation_data` : Whether you want to use validation data as a boolean True or False. Default value is True. If false, user need not provide x_validation_dataframe and y_validation_dataframe
     
-    `x_validation_dataframe` : dataframe containing features of validatoin dataset
+    `x_validation_dataframe` : dataframe containing features of validatoin dataset. Default is blank pandas dataframe.
     
-    `y_validation_dataframe` : dataframe containing dependent variable of validation dataset
+    `y_validation_dataframe` : dataframe containing dependent variable of validation dataset. Default is blank pandas dataframe.
     
     `model` : Model object. It should have .fit and .predict attribute
         
