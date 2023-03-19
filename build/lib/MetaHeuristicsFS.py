@@ -121,6 +121,8 @@ class ParticleSwarmOptimizationFS:
         4:{'x_train':x_train_dataframe,'y_train':y_train_array,'x_test':x_test_dataframe,'y_test':y_test_array}}
         
         If you only have train and test data and do not wish to do cross validation, use above dictionary format, with only one key.
+
+    use_validation_data : Whether you want to use validation data as a boolean True or False. Default value is True. If false, user need not provide x_validation_dataframe and y_validation_dataframe
     
     x_validation_dataframe : dataframe containing features of validatoin dataset
     
@@ -155,12 +157,13 @@ class ParticleSwarmOptimizationFS:
         
     '''
 
-    def __init__(self,columns_list,data_dict,x_validation_dataframe,y_validation_dataframe,model,cost_function,cost_function_improvement='increase',average=None,iterations=100,swarmSize=100,run_time=120,print_iteration_result = True):
+    def __init__(self,columns_list,data_dict,model,cost_function,x_validation_dataframe=pd.DataFrame(),y_validation_dataframe=pd.DataFrame(),use_validation_data=True,cost_function_improvement='increase',average=None,iterations=100,swarmSize=100,run_time=120,print_iteration_result = True):
         self.columns_list=columns_list
         self.data_dict=data_dict
         self.model=model
         self.x_validation_dataframe=x_validation_dataframe
         self.y_validation_dataframe=y_validation_dataframe
+        self.use_validation_data=use_validation_data
         self.cost_function=cost_function
         self.cost_function_improvement=cost_function_improvement
         self.average=average
@@ -402,6 +405,8 @@ class AntColonyOptimizationFS:
         4:{'x_train':x_train_dataframe,'y_train':y_train_array,'x_test':x_test_dataframe,'y_test':y_test_array}}
         
         If you only have train and test data and do not wish to do cross validation, use above dictionary format, with only one key.
+
+    use_validation_data : Whether you want to use validation data as a boolean True or False. Default value is True. If false, user need not provide x_validation_dataframe and y_validation_dataframe
     
     x_validation_dataframe : dataframe containing features of validatoin dataset
     
@@ -440,11 +445,12 @@ class AntColonyOptimizationFS:
         
     '''
 
-    def __init__(self,columns_list,data_dict,x_validation_dataframe,y_validation_dataframe,model,cost_function,cost_function_improvement='increase',average=None,iterations=100,N_ants=100,run_time=120,print_iteration_result = True,evaporation_rate=0.9,Q=0.2):
+    def __init__(self,columns_list,data_dict,model,cost_function,x_validation_dataframe=pd.DataFrame(),y_validation_dataframe=pd.DataFrame(),use_validation_data=True,cost_function_improvement='increase',average=None,iterations=100,N_ants=100,run_time=120,print_iteration_result = True,evaporation_rate=0.9,Q=0.2):
         self.columns_list=columns_list
         self.data_dict=data_dict
         self.x_validation_dataframe=x_validation_dataframe
         self.y_validation_dataframe=y_validation_dataframe
+        self.use_validation_data=use_validation_data
         self.model=model
         self.cost_function=cost_function
         self.cost_function_improvement=cost_function_improvement
@@ -659,6 +665,8 @@ class SimulatedAnnealingFS:
         4:{'x_train':x_train_dataframe,'y_train':y_train_array,'x_test':x_test_dataframe,'y_test':y_test_array}}
         
         If you only have train and test data and do not wish to do cross validation, use above dictionary format, with only one key.
+
+    use_validation_data : Whether you want to use validation data as a boolean True or False. Default value is True. If false, user need not provide x_validation_dataframe and y_validation_dataframe
     
     x_validation_dataframe : dataframe containing features of validatoin dataset
     
@@ -699,11 +707,12 @@ class SimulatedAnnealingFS:
         
     '''
     
-    def __init__(self,columns_list,data_dict,x_validation_dataframe,y_validation_dataframe,model,cost_function,cost_function_improvement='increase',average=None,temperature=1500,iterations=100,n_perturb=10,run_time=120,print_iteration_result = True,n_features_percent_perturb=1,alpha=0.9):
+    def __init__(self,columns_list,data_dict,model,cost_function,x_validation_dataframe=pd.DataFrame(),y_validation_dataframe=pd.DataFrame(),use_validation_data=True,cost_function_improvement='increase',average=None,temperature=1500,iterations=100,n_perturb=10,run_time=120,print_iteration_result = True,n_features_percent_perturb=1,alpha=0.9):
         self.columns_list=columns_list
         self.data_dict=data_dict
         self.x_validation_dataframe=x_validation_dataframe
         self.y_validation_dataframe=y_validation_dataframe
+        self.use_validation_data=use_validation_data
         self.model=model
         self.cost_function=cost_function
         self.cost_function_improvement=cost_function_improvement
@@ -896,6 +905,8 @@ class GeneticAlgorithmFS:
         4:{'x_train':x_train_dataframe,'y_train':y_train_array,'x_test':x_test_dataframe,'y_test':y_test_array}}
         If you only have train and test data and do not wish to do cross validation, use above dictionary format, with only one key.
 
+    use_validation_data : Whether you want to use validation data as a boolean True or False. Default value is True. If false, user need not provide x_validation_dataframe and y_validation_dataframe
+
     x_validation_dataframe : dataframe containing features of validatoin dataset
     
     y_validation_dataframe : dataframe containing dependent variable of validation dataset
@@ -932,11 +943,12 @@ class GeneticAlgorithmFS:
     
     
     '''
-    def __init__(self,model,data_dict,x_validation_dataframe,y_validation_dataframe,cost_function,average=None,cost_function_improvement='increase',columns_list=[],generations=50,population=40,prob_crossover=0.9,prob_mutation=0.1,run_time=120,print_iteration_result = True):
+    def __init__(self,model,data_dict,cost_function,x_validation_dataframe=pd.DataFrame(),y_validation_dataframe=pd.DataFrame(),use_validation_data=True,average=None,cost_function_improvement='increase',columns_list=[],generations=50,population=40,prob_crossover=0.9,prob_mutation=0.1,run_time=120,print_iteration_result = True):
         self.model=model
         self.data_dict=data_dict
         self.x_validation_dataframe=x_validation_dataframe
         self.y_validation_dataframe=y_validation_dataframe
+        self.use_validation_data=use_validation_data
         self.cost_function=cost_function
         self.average=average
         self.cost_function_improvement=cost_function_improvement
@@ -1313,9 +1325,9 @@ class FeatureSelection:
     def __init__(self,columns_list,data_dict,model,cost_function,x_validation_dataframe=pd.DataFrame(),y_validation_dataframe=pd.DataFrame(),use_validation_data=True,cost_function_improvement='increase',average=None):
         self.columns_list=columns_list
         self.data_dict=data_dict
-        self.use_validation_data=use_validation_data
         self.x_validation_dataframe=x_validation_dataframe
         self.y_validation_dataframe=y_validation_dataframe
+        self.use_validation_data=use_validation_data
         self.model=model
         self.cost_function=cost_function
         self.cost_function_improvement=cost_function_improvement
