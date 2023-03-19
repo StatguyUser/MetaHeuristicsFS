@@ -3,6 +3,7 @@
 """
 
 import numpy as np
+import pandas as pd
 np.random.seed(1)
 
 from sklearn.model_selection import train_test_split
@@ -1309,7 +1310,7 @@ class FeatureSelection:
 
 
 
-    def __init__(self,columns_list,data_dict,x_validation_dataframe,y_validation_dataframe,model,cost_function,use_validation_data=True,cost_function_improvement='increase',average=None):
+    def __init__(self,columns_list,data_dict,model,cost_function,x_validation_dataframe=pd.DataFrame(),y_validation_dataframe=pd.DataFrame(),use_validation_data=True,cost_function_improvement='increase',average=None):
         self.columns_list=columns_list
         self.data_dict=data_dict
         self.use_validation_data=use_validation_data
