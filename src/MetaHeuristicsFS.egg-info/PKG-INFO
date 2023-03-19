@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: MetaHeuristicsFS
-Version: 0.0.6
+Version: 0.0.7
 Summary: Implementation of metaheuristic algorithms for machine learning feature selection. Companion library for the book `Feature Engineering & Selection for Explainable Models A Second Course for Data Scientists`
 Home-page: https://github.com/StatguyUser/MetaHeuristicsFS
 Author: StatguyUser
